@@ -1,10 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/layout/Navbar.js'
+import Sidenav from './Components/layout/Sidenav'
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
+      <Sidenav />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
