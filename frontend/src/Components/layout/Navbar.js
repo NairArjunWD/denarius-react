@@ -28,9 +28,9 @@ class Navbar extends Component {
                 <ul id="slide-out" class="sidenav">
                     <li><div class="user-view">
                         <div class="background">
-                            <img src="images/office.jpg" />
+                            <img src="https://s3-media3.fl.yelpcdn.com/bphoto/p6Rz5m53Q_FB4V8bnwokEw/ls.jpg" />
                         </div>
-                        <a href="#user"><img class="circle" src="images/yuna.jpg" /></a>
+                        <a href="#user"><img class="circle" src="https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/16551/thumb_mike_c.jpg" /></a>
                         <a href="#name"><span class="white-text name">John Doe</span></a>
                         <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                     </div></li>
