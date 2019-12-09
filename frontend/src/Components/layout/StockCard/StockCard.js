@@ -22,11 +22,8 @@ class StockCard extends Component {
                 <div class="col s12 m4">
                     <div class="card #66bb6a green lighten-1">
                         <div class="card-content white-text">
-                            <span class="card-title">Card Title</span>
+                            <span class="card-title">{this.props.card.name}</span>
                             <ul>
-                                <li>
-                                    {this.props.card.name}
-                                </li>
                                 <li>
                                     {this.props.card.company}
                                 </li>
@@ -36,7 +33,8 @@ class StockCard extends Component {
                             </ul>
                         </div>
                         <div class="card-action">
-                            <a href="#">Enlarge</a>
+                            <a href="#"><i class="material-icons">photo_size_select_large
+</i></a>
                             <a href="#">Edit</a>
                         </div>
                     </div>
