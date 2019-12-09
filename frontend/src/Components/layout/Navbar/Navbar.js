@@ -39,7 +39,7 @@ class Navbar extends Component {
                     <li><div class="divider"></div></li>
                     
                     <li><a class="subheader">Add An Investment</a></li>
-                    <li><AddStock /></li>
+                    {/* <li><AddStock /></li> */}
                     <li><a class="waves-effect" href="#!">Add ETF</a></li>
                     <li><a class="waves-effect" href="#!">Add US Threasury Bond</a></li>
                 </ul>
