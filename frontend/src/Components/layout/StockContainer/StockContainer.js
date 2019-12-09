@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import AddStock from '../AddStock/AddStock.js';
+import StockCard from '../StockCard/StockCard.js';
 
 class StockContainer extends Component {
     constructor(props) {
@@ -55,3 +56,5 @@ class StockContainer extends Component {
         }
     }
 }
+
+export default StockContainer;
