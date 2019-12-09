@@ -34,10 +34,7 @@ class AddStock extends Component {
                     <h4>Add Stock Card</h4>
                     
                     <div class="row">
-                            <form class="col s12" onSubmit={e => {
-                                e.preventDefault();
-                                this.handleSubmit()
-                            }}>
+                            <form class="col s12" onSubmit={(e) => this.props.closeAndAdd(e, this.state)}>
                             <div class="row">
                                 <div class="input-field col s6">
                                     <input id="input_text1" type="text" data-length="10" name="name" placeholder="Name" onChange={this.props.handleChange}/>
