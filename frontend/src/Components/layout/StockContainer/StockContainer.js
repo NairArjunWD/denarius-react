@@ -7,13 +7,15 @@ class StockContainer extends Component {
         super(props);
 
         this.state = {
-            stocks: []
+            cards:'',
+            stocks: [],
+            showAddModal: null
         }
     }
 
     // trigger component once it loads
     componentDidMount() {
-        this.getStocks();
+        this.getStock()
     }
 
     getStock = async () => {
@@ -32,15 +34,15 @@ class StockContainer extends Component {
         }
     }
 
-    addStock = async (e, stockFromForm) => {
+    closeAndAdd = async (e, stock) => {
         e.preventDefault();
-        console.log(stockFromForm);
+        console.log(stock);
 
         try {
 
-            const createdStockResponse = await fetch(process.env.REACT_APP_API_URL + '/api/v1/stocks', {
+            const createdStockResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/stocks`, {
                 method: 'POST',
-                body: JSON.stringify(stockFromForm),
+                body: JSON.stringify(stock),
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -49,11 +51,33 @@ class StockContainer extends Component {
             const parsedResponse = await createdStockResponse.json();
             console.log(parsedResponse, ' this is response')
 
-            this.setState({stocks: [this.state.stocks, parsedResponse.data]})
+            this.setState({
+                stocks: [...this.state.stocks, parsedResponse.data]
+                
+            })
         } catch (err) {
             console.log('error')
             console.log(err)
         }
+    }
+
+    showAddModal = () => {
+        this.setState({
+            showAddModal: true
+        })
+    }
+    
+
+    render() {
+        console.log(this.state.stocks, 'stocks are here')
+        return (
+            <React.Fragment>
+                {
+                    <StockCard card={this.state} />
+                }
+                
+            </React.Fragment>
+        )
     }
 }
 

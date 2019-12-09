@@ -7,7 +7,7 @@ class StockCard extends Component {
         super();
 
         this.state = {
-            name: `${AddStock.name}`,
+            name: '',
             company: '',
             amount: ''
         }
