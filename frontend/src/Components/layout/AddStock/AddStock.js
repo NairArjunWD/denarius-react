@@ -34,19 +34,22 @@ class AddStock extends Component {
                     <h4>Add Stock Card</h4>
                     
                     <div class="row">
-                        <form class="col s12" onSubmit={(e) => this.props.addStock}>
+                            <form class="col s12" onSubmit={e => {
+                                e.preventDefault();
+                                this.handleSubmit()
+                            }}>
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="input_text1" type="text" data-length="10" name="name" placeholder="Name" onChange={this.handleChange}/>
-                                        <input placeholder='comapny' id="input_text2" type="text" data-length="10" name="company" placeholder="Company" onChange={this.handleChange}/>
-                                        <input id="input_text3" type="number" data-length="10" name="amount" placeholder="Amount" onChange={this.handleChange}/>
+                                    <input id="input_text1" type="text" data-length="10" name="name" placeholder="Name" onChange={this.props.handleChange}/>
+                                        <input placeholder='comapny' id="input_text2" type="text" data-length="10" name="company" placeholder="Company" onChange={this.props.handleChange}/>
+                                        <input id="input_text3" type="number" data-length="10" name="amount" placeholder="Amount" onChange={this.props.handleChange}/>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    <button type="submit" class="modal-close waves-effect waves-green btn-flat">Agree</button>
                 </div>
             </div>
             </div>

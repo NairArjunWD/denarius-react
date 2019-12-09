@@ -49,7 +49,7 @@ class StockContainer extends Component {
             const parsedResponse = await createdStockResponse.json();
             console.log(parsedResponse, ' this is response')
 
-            this.setState({stocks: [...this.state.stocks, parsedResponse.data]})
+            this.setState({stocks: [this.state.stocks, parsedResponse.data]})
         } catch (err) {
             console.log('error')
             console.log(err)
