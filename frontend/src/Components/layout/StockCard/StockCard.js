@@ -6,14 +6,14 @@ class StockCard extends Component {
     constructor() {
         super();
 
-        StockCard.state = {
-            name: '',
+        this.state = {
+            name: `${AddStock.name}`,
             company: '',
             amount: ''
         }
     }
     handleChange = (e) => {
-        StockCard.setState({ [e.currentTarget.name]: e.currentTarget.value })
+        this.setState({ [e.currentTarget.name]: e.currentTarget.value })
     }
 
     render() {
@@ -24,11 +24,14 @@ class StockCard extends Component {
                         <div class="card-content white-text">
                             <span class="card-title">Card Title</span>
                             <ul>
-                                <li name="name" onChange={this.handleChange}>
-                                    
+                                <li>
+                                    {this.props.card.name}
                                 </li>
                                 <li>
-                                    card made
+                                    {this.props.card.company}
+                                </li>
+                                <li>
+                                    {this.props.card.amount}
                                 </li>
                             </ul>
                         </div>

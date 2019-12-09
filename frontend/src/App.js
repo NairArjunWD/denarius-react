@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react'
+
 // import { BrowserRouter, Route, Switch} from 'react-router-dom'
 
 import './App.css';
@@ -7,17 +8,29 @@ import OurModal from './Components/layout/OurModal/OurModal.js'
 import AddStock from './Components/layout/AddStock/AddStock.js'
 import StockCard from './Components/layout/StockCard/StockCard.js'
 
-function App() {
-  return (
-    <div className="App">
-      <Navbar />
-        <OurModal />
-      <AddStock />
-      <div>
-        <StockCard />
+class App extends Component{
+
+state = {
+  name: '',
+  company: '',
+  amount: ''
+}
+
+handleChange = (e) => {
+  this.setState({ [e.currentTarget.name]: e.currentTarget.value })
+}
+  render() {
+    return (
+      <div className="App">
+        <Navbar />
+          <OurModal />
+        <AddStock handleChange={this.handleChange}/>
+        <div>
+          <StockCard card={this.state}/>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
