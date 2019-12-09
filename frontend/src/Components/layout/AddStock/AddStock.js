@@ -39,7 +39,7 @@ class AddStock extends Component {
                                 <div class="input-field col s6">
                                     <input id="input_text1" type="text" data-length="10" value={this.state.name}/>
                                     <label for="input_text1">name</label>
-                                        <input id="input_text2" type="text" data-length="10" value={this.state.company}/>
+                                        <input placeholder='first name' id="input_text2" type="text" data-length="10" value={this.state.company}/>
                                     <label for="input_text2">company</label>
                                         <input id="input_text3" type="float" data-length="10" value={this.state.amount}/>
                                     <label for="input_text3">amount</label>
