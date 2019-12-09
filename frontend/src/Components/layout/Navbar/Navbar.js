@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AddStock from './AddStock.js'
+import AddStock from '../AddStock/AddStock.js'
 
 class Navbar extends Component {
     componentDidMount() {
