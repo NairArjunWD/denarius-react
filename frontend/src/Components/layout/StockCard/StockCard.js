@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
+import AddStock from '../AddStock/AddStock.js';
 
 class StockCard extends Component {
+
+    constructor() {
+        super();
+
+        StockCard.state = {
+            name: '',
+            company: '',
+            amount: ''
+        }
+    }
+    handleChange = (e) => {
+        StockCard.setState({ [e.currentTarget.name]: e.currentTarget.value })
+    }
 
     render() {
         return (
@@ -8,10 +22,13 @@ class StockCard extends Component {
                 <div class="col s12 m4">
                     <div class="card #66bb6a green lighten-1">
                         <div class="card-content white-text">
-                            <span class="card-title">APPL</span>
+                            <span class="card-title">Card Title</span>
                             <ul>
+                                <li name="name" onChange={this.handleChange}>
+                                    
+                                </li>
                                 <li>
-                                    154.32
+                                    card made
                                 </li>
                             </ul>
                         </div>
