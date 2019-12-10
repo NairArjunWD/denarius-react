@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AddStock from '../AddStock/AddStock.js';
+// import {Link} from 'react-router-dom'
 
 class StockCard extends Component {
 
