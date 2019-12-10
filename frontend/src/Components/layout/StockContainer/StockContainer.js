@@ -9,7 +9,10 @@ class StockContainer extends Component {
         this.state = {
             cards:'',
             stocks: [],
-            showAddModal: null
+            showAddModal: null,
+            name: '',
+            company: '',
+            amount: ''
         }
     }
 
@@ -37,9 +40,7 @@ class StockContainer extends Component {
     closeAndAdd = async (e, stock) => {
         e.preventDefault();
         console.log(stock);
-
         try {
-
             const createdStockResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/stocks`, {
                 method: 'POST',
                 body: JSON.stringify(stock),
@@ -50,10 +51,8 @@ class StockContainer extends Component {
 
             const parsedResponse = await createdStockResponse.json();
             console.log(parsedResponse, ' this is response')
-
             this.setState({
                 stocks: [...this.state.stocks, parsedResponse.data]
-                
             })
         } catch (err) {
             console.log('error')
@@ -69,13 +68,12 @@ class StockContainer extends Component {
     
 
     render() {
-        console.log(this.state.stocks, 'stocks are here')
         return (
             <React.Fragment>
                 {
                     <StockCard card={this.state} />
+           
                 }
-                
             </React.Fragment>
         )
     }
