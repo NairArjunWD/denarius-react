@@ -27,7 +27,7 @@ export class StockList extends Component {
                                         
                                         <ul>
                                             <li>
-                                                {this.props.card.company}
+                                                {this.props.stocks.company}
                                             </li>
                                             <li>
                                                 {this.props.card.amount}
