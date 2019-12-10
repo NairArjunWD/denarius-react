@@ -23,7 +23,7 @@ export class StockList extends Component {
                                 <div class="card #66bb6a green lighten-1">
                                     <div class="card-content white-text" key={this.props.stocks.id}>
                                         
-                                        <span class="card-title">{this.props.card.name}</span>
+                                        <span class="card-title">{this.props.stocks.name}</span>
                                         
                                         <ul>
                                             <li>
