@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import AddStock from '../AddStock/AddStock.js'
+import React, { Component } from 'react';
+import AddStock from '../AddStock/AddStock.js';
+import M from 'materialize-css/dist/js/materialize.min.js';
 
-class Navbar extends Component {
+export class Navbar extends Component {
     componentDidMount() {
-        const M = window.M;
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems, {});
