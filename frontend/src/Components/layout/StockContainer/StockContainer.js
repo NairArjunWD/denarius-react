@@ -32,7 +32,9 @@ class StockContainer extends Component {
 
             this.setState( {
                 stocks: parsedStocks.data
+                
             });
+            console.log(stocks)
 
         } catch (err) {
             console.log(err)
