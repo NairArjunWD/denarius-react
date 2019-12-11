@@ -22,6 +22,29 @@ handleChange = (e) => {
   this.setState({ [e.currentTarget.name]: e.currentTarget.value })
 }
 
+componentDidMount() {
+  this.getStock()
+}
+
+
+  getStock = async () => {
+
+    try {
+      const stocks = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/stocks`);
+      const parsedStocks = await stocks.json();
+      console.log(parsedStocks);
+
+      this.setState({
+        stocks: parsedStocks.data
+
+      });
+      console.log(stocks)
+
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   closeAndAdd = async (stock) => {
     console.log("WE ARE HERE!!!!");
     try {
@@ -35,7 +58,6 @@ handleChange = (e) => {
 
       const parsedResponse = await createdStockResponse.json();
       console.log(parsedResponse, ' this is response')
-
       this.setState({
         stocks: [...this.state.stocks, parsedResponse.data]
       })
@@ -52,7 +74,7 @@ handleChange = (e) => {
           <OurModal />
         <AddStock handleChange={this.handleChange} closeAndAdd={this.closeAndAdd}/>
         <div>
-          <StockContainer />
+          <StockContainer stocks={this.state.stocks}/>
           {/* <StockCard card={this.state}/> */}
         </div>
       </div>
