@@ -99,6 +99,14 @@ class StockContainer extends Component {
             }
         })
     }
+    handleEditChange = (e) => {
+        this.setState({
+            stockToEdit: {
+                ...this.state.stockToEdit,
+                [e.currentTarget.name]: e.currentTarget.value
+            }
+        });
+    }
 
     showAddModal = () => {
         this.setState({
