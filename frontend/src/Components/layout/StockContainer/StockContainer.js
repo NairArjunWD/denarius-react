@@ -91,6 +91,15 @@ class StockContainer extends Component {
         }
     }
 
+    openAndEdit = (stockFromTheList) => {
+        this.setState({
+            showEditStock: true,
+            stockToEdit: {
+                ...stockFromTheList
+            }
+        })
+    }
+
     showAddModal = () => {
         this.setState({
             showAddModal: true
