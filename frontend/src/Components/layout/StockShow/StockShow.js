@@ -26,4 +26,25 @@ class StockShow extends Component {
             console.log(err);
         }
     }
+
+    componentDidMount() {
+        this.getStock()
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                <div>
+                    <h1>{this.state.stocks.name}</h1>
+                    <h4>Created: {this.state.stocks.created_at}</h4>
+                </div>
+                <div>
+                    <h2>Company: {this.state.stocks.company}</h2>
+                    <h2>Amount: {this.state.stocks.amount}</h2>
+                </div>
+            </React.Fragment>
+        )
+    }
 }
+
+export default StockShow;
