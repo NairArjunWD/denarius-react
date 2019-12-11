@@ -12,32 +12,6 @@ import EditStock from '../EditStock/EditStock.js'
 
 const StockList = (props) => {
 
-    // closeAndEdit = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         const editResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/stocks/${this.state.timelineToEdit.id}`, {
-    //             method: 'PUT',
-    //             body: JSON.stringify(this.state.stockToEdit),
-    //             header: {
-    //                 'Content-Type': 'application/json'
-    //             }
-    //         });
-    //         const editResponseParsed = await editResponse.json();
-    //         const newStockArrayWithEdit = this.state.stocks.map((stock) => {
-    //             if (stock.id === editResponseParsed.data.id) {
-    //                 stock = editResponseParsed.data
-    //             }
-    //             return stock;
-    //         });
-    //         this.setState({
-    //             stocks: newStockArrayWithEdit,
-    //             showEditStock: false
-    //         });
-    //     } catch (err) {
-    //         console.log(err)
-    //     }
-    // }
-
     // openAndEdit = (stockFromTheList) => {
     //     this.setState({
     //         showEditStock: true,
@@ -88,7 +62,7 @@ const StockList = (props) => {
                                 <div class="card-action">
                                     <a href="#"><i class="material-icons">photo_size_select_large
 </i></a>
-                                        <EditStock  />
+                                        <EditStock stock={stock} />
                                         {/* <i class="material-icons">photo_size_select_large
                                         <EditStock handleChange={this.handleChange} closeAndEdit={this.closeAndEdit} />
                                         </i> */}

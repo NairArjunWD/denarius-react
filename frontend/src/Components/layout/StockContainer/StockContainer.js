@@ -127,7 +127,7 @@ class StockContainer extends Component {
     render() {
         return (
             <React.Fragment>
-                {
+                {/* {
                     // <StockCard card={this.state} />
                     this.state.showAddModal
                     ?
@@ -142,8 +142,8 @@ class StockContainer extends Component {
                     <EditStock closeAndEdit={this.closeAndEdit} closeModal={this.closeModal} handleEditChange={this.handleEditChange} stockToEdit={this.state.stockToEdit} />
                     :
                     null
-                }
-                <EditStock handleChange={this.handleChange} closeAndEdit={this.closeAndEdit} />
+                } */}
+                <EditStock handleChange={this.handleEditChange} closeAndEdit={this.closeAndEdit} />
                 <StockList stocks={this.props.stocks} openAndEdit={this.openAndEdit} />
             </React.Fragment>
         )

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button, Card, Row, Col, Modal } from 'react-materialize';
+import { Button, Card, Row, Col } from 'react-materialize';
 
 class DeleteStock extends Component {
 
