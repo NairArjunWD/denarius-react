@@ -14,10 +14,37 @@ class EditStock extends Component {
         this.setState({ [e.currentTarget.name]: e.currentTarget.value })
     }
 
+    closeAndEdit = async (stock) => {
+        console.log('HELLO HELLO')
+        // console.log(this.props, 'HELLO HELLO')
+        try {
+            const editResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/stocks/${this.props.stock.id}`, {
+                method: 'PUT',
+                body: JSON.stringify(stock),
+                header: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const editResponseParsed = await editResponse.json();
+            const newStockArrayWithEdit = this.state.stocks.map((stock) => {
+                if (stock.id === editResponseParsed.data.id) {
+                    stock = editResponseParsed.data
+                }
+                return stock;
+            });
+            this.setState({
+                stocks: newStockArrayWithEdit,
+                showEditStock: false
+            });
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     handleSubmit = (e) => {
         console.log("EDIT EDIT EDIT")
         e.preventDefault()
-        this.props.closeAndEdit(this.state)
+        this.closeAndEdit(this.state)
     }
 
     componentDidMount() {
@@ -32,10 +59,10 @@ class EditStock extends Component {
         return (
             <div>
 
-                <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Edit Stock</a>
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal3">Edit Stock</a>
 
 
-                <div id="modal2" class="modal">
+                <div id="modal3" class="modal">
                     <div class="modal-content">
                         <h4>Edit Stock Card</h4>
 
