@@ -72,7 +72,7 @@ class StockContainer extends Component {
     closeAndEdit = async (e) => {
         e.preventDefault();
         try {
-            const editResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/timelines/${this.state.timelineToEdit.id}`, {
+            const editResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/stocks/${this.state.stockToEdit.id}`, {
                 method: 'PUT',
                 body: JSON.stringify(this.state.stockToEdit),
                 header: {
@@ -143,6 +143,7 @@ class StockContainer extends Component {
                     :
                     null
                 }
+                <EditStock handleChange={this.handleChange} closeAndEdit={this.closeAndEdit} />
                 <StockList stocks={this.props.stocks} openAndEdit={this.openAndEdit} />
             </React.Fragment>
         )
