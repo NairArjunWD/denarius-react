@@ -12,10 +12,13 @@ class StockContainer extends Component {
             cards:'',
             stocks: [],
             showAddModal: null,
+            showEditStock: null,
             id: '',
-            name: '',
-            company: '',
-            amount: ''
+            stockToEdit: {
+                name: '',
+                company: '',
+                amount: ''
+            }
         }
     }
 

@@ -3,6 +3,7 @@ import { Button, Card, Row, Col } from 'react-materialize';
 // import StockCard from '../StockCard/StockCard';
 import M from "materialize-css/dist/js/materialize.min.js"
 import { Link } from 'react-router-dom'
+import EditStock from '../EditStock/EditStock.js'
 
 const StockList = (props) => {
     const stocks = props.stocks.map((stock) => {
@@ -31,7 +32,8 @@ const StockList = (props) => {
                                 <div class="card-action">
                                     <a href="#"><i class="material-icons">photo_size_select_large
 </i></a>
-                                    <a href="#">Edit</a>
+                                    {/* <EditStock handleChange={this.handleChange} closeAndEdit={this.closeAndEdit} /> */}
+
                                 </div>
                             </div>
                         </div>
