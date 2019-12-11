@@ -32,12 +32,12 @@ class EditStock extends Component {
         return (
             <div>
 
-                <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Add Stock</a>
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Edit Stock</a>
 
 
                 <div id="modal2" class="modal">
                     <div class="modal-content">
-                        <h4>Add Stock Card</h4>
+                        <h4>Edit Stock Card</h4>
 
                         <div class="row">
                             <form class="col s12" onSubmit={this.handleSubmit}>
