@@ -89,7 +89,7 @@ class StockContainer extends Component {
                     null
            
                 }
-                <StockList stocks={this.state.stocks} />
+                <StockList stocks={this.props.stocks} />
             </React.Fragment>
         )
     }
