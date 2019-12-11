@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import AddStock from '../AddStock/AddStock.js';
 // import StockCard from '../StockCard/StockCard.js';
 import StockList from '../StockList/StockList.js';
+import EditStock from '../EditStock/EditStock.js';
 
 class StockContainer extends Component {
     constructor(props) {
@@ -132,7 +133,14 @@ class StockContainer extends Component {
                     null
            
                 }
-                <StockList stocks={this.props.stocks} />
+                {
+                    this.state.showEditStock
+                    ?
+                    <EditStock closeAndEdit={this.closeAndEdit} closeModal={this.closeModal} handleEditChange={this.handleEditChange} stockToEdit={this.state.stockToEdit} />
+                    :
+                    null
+                }
+                <StockList stocks={this.props.stocks} openAndEdit={this.openAndEdit} />
             </React.Fragment>
         )
     }
