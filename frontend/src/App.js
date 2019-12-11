@@ -67,6 +67,32 @@ componentDidMount() {
     }
   }
 
+  closeAndEdit = async (e) => {
+    e.preventDefault();
+    try {
+      const editResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/timelines/${this.state.timelineToEdit.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(this.state.stockToEdit),
+        header: {
+          'Content-Type': 'application/json'
+        }
+      });
+      const editResponseParsed = await editResponse.json();
+      const newStockArrayWithEdit = this.state.stocks.map((stock) => {
+        if (stock.id === editResponseParsed.data.id) {
+          stock = editResponseParsed.data
+        }
+        return stock;
+      });
+      this.setState({
+        stocks: newStockArrayWithEdit,
+        showEditStock: false
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   render() {
     return (
       <div className="App">
