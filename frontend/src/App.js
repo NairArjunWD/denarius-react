@@ -5,7 +5,8 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom'
 import './App.css';
 import Navbar from './Components/layout/Navbar/Navbar.js'
 import AddStock from './Components/layout/AddStock/AddStock.js'
-import StockContainer from './Components/layout/StockContainer/StockContainer';
+import StockContainer from './Components/layout/StockContainer/StockContainer.js';
+import LoginPage from './Components/layout/LoginPage/LoginPage.js';
 
 class App extends Component{
 
@@ -95,6 +96,7 @@ componentDidMount() {
     return (
       <div className="App">
         <Navbar />
+
         <AddStock handleChange={this.handleChange} closeAndAdd={this.closeAndAdd}/>
         <div>
           <StockContainer stocks={this.state.stocks}/>
