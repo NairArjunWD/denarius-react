@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button, Card, Row, Col } from 'react-materialize';
-// import StockCard from '../StockCard/StockCard';
 import M from "materialize-css/dist/js/materialize.min.js"
 import { Link } from 'react-router-dom'
 import EditStock from '../EditStock/EditStock.js'
@@ -38,12 +37,9 @@ const StockList = (props) => {
                         :
                         null
                 } */}
-            <div>
-                <Card>
-
-                        
-
-                    <div class="row">
+            <div >
+                <Card>    
+                    <div class="row #66bb6a green lighten-3">
                         <div class="col s12 m4">
                             <div class="card #66bb6a green lighten-1">
                                 <div class="card-content white-text" key={stock.id}>

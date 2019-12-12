@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
 
 class EditStock extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
-            name: '',
-            company: '',
-            amount: ''
+            cards: '',
+            stocks: [],
+            showAddModal: null,
+            showEditStock: null,
+            id: '',
+            stockToEdit: {
+                name: '',
+                company: '',
+                amount: ''
+            }
         }
     }
     handleChange = (e) => {
