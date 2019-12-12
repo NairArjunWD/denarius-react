@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import AddStock from '../AddStock/AddStock.js';
-// import StockCard from '../StockCard/StockCard.js';
 import StockList from '../StockList/StockList.js';
 import EditStock from '../EditStock/EditStock.js';
 

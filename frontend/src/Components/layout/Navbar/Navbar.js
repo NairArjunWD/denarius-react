@@ -19,9 +19,9 @@ export class Navbar extends Component {
 
                         <a href="#" class="brand-logo #66bb6a green lighten-1">𐆖</a>
                         <ul id="nav-mobile" class="right hide-on-med-and-down #66bb6a green lighten-1">
-                            <li><a href="sass.html">Sass</a></li>
-                            <li><a href="badges.html">Components</a></li>
-                            <li><a href="collapsible.html">JavaScript</a></li>
+                            <li><a href="sass.html">Add Stock</a></li>
+                            <li><a href="badges.html">Add ETF</a></li>
+                            <li><a href="collapsible.html">Add Bond</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -31,17 +31,27 @@ export class Navbar extends Component {
                             <img src="https://s3-media3.fl.yelpcdn.com/bphoto/p6Rz5m53Q_FB4V8bnwokEw/ls.jpg" />
                         </div>
                         <a href="#user"><img class="circle" src="https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/16551/thumb_mike_c.jpg" /></a>
-                        <a href="#name"><span class="white-text name">John Doe</span></a>
-                        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                        <a href="#name"><span class="black-text name">Michael Clipper</span></a>
+                        <a href="#email"><span class="black-text email">MClipper@gmail.com</span></a>
                     </div></li>
-                    <li><a href="#!"><i class="material-icons">cloud</i>Profile</a></li>
-                    <li><a href="#!">Contacts</a></li>
+                    <li><a href="#!">Profile</a></li>
+                    <li>
+                        <div class="switch">
+                            <label>
+                                Light
+                                <input type="checkbox" />
+                                <span class="lever"></span>
+                                Dark
+                            </label>
+                        </div>
+                    </li>
+                    <li><a href="#!">Logout</a></li>
                     <li><div class="divider"></div></li>
                     
-                    <li><a class="subheader">Add An Investment</a></li>
+                    <li><a class="subheader">Investment Help</a></li>
                     {/* <li><AddStock /></li> */}
-                    <li><a class="waves-effect" href="#!">Add ETF</a></li>
-                    <li><a class="waves-effect" href="#!">Add US Threasury Bond</a></li>
+                    <li><a class="waves-effect" href="#!">Salary Calculator</a></li>
+                    <li><a class="waves-effect" href="#!">Budget</a></li>
                 </ul>
             </div>
         )
