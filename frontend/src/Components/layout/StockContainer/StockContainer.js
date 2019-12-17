@@ -142,7 +142,7 @@ class StockContainer extends Component {
                     :
                     null
                 } */}
-                <EditStock handleChange={this.handleEditChange} closeAndEdit={this.closeAndEdit} />
+                {/* <EditStock handleChange={this.handleEditChange} closeAndEdit={this.closeAndEdit} /> */}
                 <StockList stocks={this.props.stocks} openAndEdit={this.openAndEdit} />
             </React.Fragment>
         )

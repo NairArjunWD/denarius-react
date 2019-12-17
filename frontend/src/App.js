@@ -69,7 +69,7 @@ componentDidMount() {
   closeAndEdit = async (e) => {
     e.preventDefault();
     try {
-      const editResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/timelines/${this.state.timelineToEdit.id}`, {
+      const editResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/stocks/${this.state.stockToEdit.id}`, {
         method: 'PUT',
         body: JSON.stringify(this.state.stockToEdit),
         header: {
@@ -95,13 +95,22 @@ componentDidMount() {
   render() {
     return (
       <div className="App">
-        <Navbar />
+        <BrowserRouter>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={StockContainer} />
+            <Route exact path="/stocks" component={StockContainer} />
+            <Route exact path="/stocks/:id" component={StockShow} />
+            <Route exact path="/" />
+          </Switch>
+        </BrowserRouter>
+        {/* <Navbar /> */}
 
-        <AddStock handleChange={this.handleChange} closeAndAdd={this.closeAndAdd}/>
+        {/* <AddStock handleChange={this.handleChange} closeAndAdd={this.closeAndAdd}/>
         <div>
           <StockContainer stocks={this.state.stocks}/>
-          {/* <StockCard card={this.state}/> */}
-        </div>
+          <StockCard card={this.state}/> */}
+        {/* </div> */}
       </div>
     );
   }
