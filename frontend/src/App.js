@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import { BrowserRouter, Route, Switch} from 'react-router-dom'
+// import { BrowserRouter, Route, Switch} from 'react-router-dom'
 
 import './App.css';
 import Navbar from './Components/layout/Navbar/Navbar.js'
@@ -95,7 +95,7 @@ componentDidMount() {
   render() {
     return (
       <div className="App">
-        <BrowserRouter>
+        {/* <BrowserRouter>
           <Navbar />
           <Switch>
             <Route exact path="/" component={StockContainer} />
@@ -103,14 +103,14 @@ componentDidMount() {
             <Route exact path="/stocks/:id" component={StockShow} />
             <Route exact path="/" />
           </Switch>
-        </BrowserRouter>
-        {/* <Navbar /> */}
+        </BrowserRouter> */}
+        <Navbar />
 
-        {/* <AddStock handleChange={this.handleChange} closeAndAdd={this.closeAndAdd}/>
+        <AddStock handleChange={this.handleChange} closeAndAdd={this.closeAndAdd}/>
         <div>
           <StockContainer stocks={this.state.stocks}/>
-          <StockCard card={this.state}/> */}
-        {/* </div> */}
+          {/* <StockCard card={this.state}/> */}
+        </div>
       </div>
     );
   }
